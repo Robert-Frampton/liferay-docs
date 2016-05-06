@@ -47,68 +47,90 @@ public class CheckImagesTaskDevSite extends Task {
 		}
 		
 		// Get articles
-		File articleDir = new File(docDir.getAbsolutePath() + "/articles");
-		File[] articleDirFiles = articleDir.listFiles();
-		List<File> articles = new ArrayList<File>();
+		String productType = _productType;
+		List<String> dirTypes = new ArrayList<String>();
+		dirTypes.add("");
 
-		if ((!articleDir.exists() || !articleDir.isDirectory())) {
-			throw new BuildException("Missing articles directory " +
-					articleDir.getAbsolutePath());
+		if (productType.equals("dxp")) {
+			dirTypes.add("-dxp");
+		}
+		if (productType.equals("dist")) {
+			try {
+				ReplaceImagesPath.replaceImagePaths(docDir);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 		}
 		
-		Queue<File> q = new LinkedList<File>();
-		for (File f : articleDirFiles) {
-			q.add(f);
-		}
+		for (String dirType : dirTypes) {
+
+			File articleDir = new File(docDir.getAbsolutePath() + "/articles" + dirType);
+			File[] articleDirFiles = articleDir.listFiles();
+			List<File> articles = new ArrayList<File>();
+
+			if ((!articleDir.exists() || !articleDir.isDirectory())) {
+				throw new BuildException("Missing articles directory " +
+						articleDir.getAbsolutePath());
+			}
 		
-		while (!q.isEmpty()) {
-			File f = q.remove(); 
+			Queue<File> q = new LinkedList<File>();
+			for (File f : articleDirFiles) {
+				q.add(f);
+			}
+		
+			while (!q.isEmpty()) {
+				File f = q.remove(); 
 			
-			if (f.isDirectory()) {
-				File[] files = f.listFiles();
+				if (f.isDirectory()) {
+					File[] files = f.listFiles();
 				
-				for (File file : files) {
-					q.add(file);
+					for (File file : files) {
+						q.add(file);
+					}
+				}
+				else {
+					if (f.getName().endsWith(".markdown")) {
+						articles.add(f);
+					}
 				}
 			}
-			else {
-				if (f.getName().endsWith(".markdown")) {
-					articles.add(f);
-				}
-			}
-		}
 		
-		// Get a map of articles to lists of referenced images
-		Map<File, List<String>> imagePathsMap = new HashMap<File, List<String>>();
+			// Get a map of articles to lists of referenced images
+			Map<File, List<String>> imagePathsMap = new HashMap<File, List<String>>();
 		
-		for (File article : articles) {
-			List<String> imagePaths = getImagePaths(article);
+			for (File article : articles) {
+				List<String> imagePaths = getImagePaths(article);
 			
-			imagePathsMap.put(article, imagePaths);
+				imagePathsMap.put(article, imagePaths);
+			}
+		
+			// Get list of images
+			File imgDir = new File(docDir.getAbsolutePath() + "/images" + dirType);
+			if (!imgDir.exists()) {
+				throw new BuildException("imgdir " + imgDir.getAbsolutePath() +
+						" could not be found");
+			}
+			if (!docDir.isDirectory()) {
+				throw new BuildException("imgdir " + imgDir.getAbsolutePath() +
+						" is not a directory");
+			}
+		
+			File[] imagesArray = imgDir.listFiles();
+		
+			List<File> images = Arrays.asList(imagesArray);
+		
+			checkImages(images, imagePathsMap);
+
+			System.out.println("Finished checking image sources in articles" + dirType);
 		}
-		
-		// Get list of images
-		File imgDir = new File(docDir.getAbsolutePath() + "/images");
-		if (!imgDir.exists()) {
-			throw new BuildException("imgdir " + imgDir.getAbsolutePath() +
-				" could not be found");
-		}
-		if (!docDir.isDirectory()) {
-			throw new BuildException("imgdir " + imgDir.getAbsolutePath() +
-				" is not a directory");
-		}
-		
-		File[] imagesArray = imgDir.listFiles();
-		
-		List<File> images = Arrays.asList(imagesArray);
-		
-		checkImages(images, imagePathsMap);
-		
-		System.out.println("Finished checking image sources.");
 	}
 
 	public void setDocdir(String docdir) {
 		_docdir = docdir;
+	}
+	
+	public void setProductType(String productType) {
+		_productType = productType;
 	}
 	
 	/**
@@ -154,6 +176,7 @@ public class CheckImagesTaskDevSite extends Task {
 		}
 		
 		List<String> errors = new ArrayList<String>();
+		List<String> warnings = new ArrayList<String>();
 
 		Set<File> articles = imagePathsMap.keySet();
 
@@ -182,7 +205,7 @@ public class CheckImagesTaskDevSite extends Task {
 		// Report extra images
 		for (String imageName : imageNames) {
 			if (!referencedImageNames.contains(imageName)) {
-				errors.add("Extra image: " + imageName);
+				warnings.add("Extra image: " + imageName);
 			}
 		}
 		
@@ -217,6 +240,13 @@ public class CheckImagesTaskDevSite extends Task {
 			}
 			
 			throw new BuildException("Missing images, extra images, or faulty image paths");
+		}
+		
+		if (!warnings.isEmpty()) {
+			for (String warning : warnings) {
+				System.err.println("WARNING - " + warning);
+			}
+			
 		}
 	}
 	
@@ -293,4 +323,5 @@ public class CheckImagesTaskDevSite extends Task {
 
 
 	private String _docdir;
+	private String _productType;
 }

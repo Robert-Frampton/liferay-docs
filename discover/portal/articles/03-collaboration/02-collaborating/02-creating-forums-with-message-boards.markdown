@@ -1,10 +1,9 @@
 #  Creating Forums with Message Boards [](id=creating-forums-with-message-boards)
 
-Liferay's Message Boards app is a state of the art forum application similar to
-many forums in which you may have participated. The difference, of course, is
-that Liferay's message boards can inherit the abilities of the Liferay
-development platform to provide an integrated experience that others cannot
-match. 
+@product@'s Message Boards app is a state of the art forum application
+similar to many forums in which you may have participated. The difference, of
+course, is that Liferay's message boards can inherit the abilities of
+@product@ to provide an integrated experience that others cannot match. 
 
 There are countless web sites out there where it is clearly evident that there
 is no link whatsoever between the main site and the message boards. In some
@@ -13,7 +12,7 @@ once for the message boards. Sometimes it is three times: for the site, for the
 message boards, and for the shopping cart. By providing a message boards
 application along with all of the other applications, Liferay provides a unique,
 integrated approach to building sites. You can concentrate on building your site
-while Liferay does the integration work for you. 
+while @product@ does the integration work for you. 
 
 Message Boards offers many configuration options. They are straightforward to
 use and are the reason why it's a full-featured forum application for your site.
@@ -21,14 +20,14 @@ Let's create a message board.
 
 ## Creating Message Boards [](id=creating-message-boards)
 
-You can create a message board instance for a Liferay instance, a site, or page.
-An instance's message board can be used on any of its pages. A message board can
-be scoped to a site, including a regular site, an organization's site, or a
-user's profile site or dashboard site. Message Boards in Site Administration
-lets you administer all of a message board's options. Each Liferay instance and
-site has a message board instance built-in. If you want to work with a message
-board scoped to a page, you must create the page scope from a Message Boards
-application on that page. 
+You can create a message board instance for a @product@ instance, a site,
+or page. An instance's message board can be used on any of its pages. A message
+board can be scoped to a site, including a regular site, an organization's site,
+or a user's profile site or dashboard site. Message Boards in Site
+Administration lets you administer all of a message board's options. Each
+@product@ instance and site has a message board instance built-in. If you
+want to work with a message board scoped to a page, you must create the page
+scope from a Message Boards application on that page. 
 
 To scope a message board to a page, first add the Message Boards application to
 the page. Then click the app's *Options* icon
@@ -38,6 +37,11 @@ the page. Then click the app's *Options* icon
 message board is now scoped to the page and available to work with in Site
 Administration. 
 
+To administer a message board, open the *Menu*
+(![Menu](../../../images/icon-menu.png)) and navigate to the *Content* section
+for your site, page, or global scope. The Message Boards administration screen
+appears. 
+
 +$$$
 
 **Note**: To administer a message board for a particular page scope, click the
@@ -46,11 +50,6 @@ scopes, and select the scope with the page's name. Finally, select *Message
 Boards* from under the *Content* heading.
 
 $$$
-
-To administer a message board, open the *Product Menu* (![Product
-Menu](../../../images/icon-menu.png)) and navigate the *Content* section for your
-site, page, or global scope. Click on *Message Boards* and the Message Boards
-administration screen appears. 
 
 ![Figure 1: A Message Board instance starts empty, ready for you to configure for your purposes.](../../../images/message-boards-administration.png)
 
@@ -79,7 +78,7 @@ posting off by unchecking this box.
 
 Enabling the *Subscribe by Default* option automatically subscribes users to
 threads they participate in. Whenever a message in a thread is added or updated,
-Liferay sends a notification email to all users subscribed to the thread. 
+@product@ sends a notification email to all users subscribed to the thread. 
 
 You can set the *Message Format* to either BBCode or HTML. This determines the
 markup language of users' actual message board posts. The type of WYSIWYG editor
@@ -98,9 +97,10 @@ Using flags is also a good practice even if you're not allowing anonymous
 posting. 
 
 Enabling *Enable Ratings* allows users to score posts. The scores are used by
-Liferay's social activity system to rank site members by how helpful their
-contributions are. You can read more about social activity in the *Measuring
-Social Activity* section. 
+@product@'s social activity system to rank site members by how helpful
+their contributions are. You can read more about social activity in the
+[Measuring Social Activity](/discover/portal/-/knowledge_base/7-0/measuring-social-activity)
+article. 
 
 Enabling the *Thread as Question by Default* option automatically checks the
 mark as question box in the new thread window. Threads marked as questions
@@ -124,7 +124,9 @@ which message board email notifications are sent. The default name and email
 address are those of the default administrator account (e.g., `Test Test` and
 the email address is `test@liferay.com`) you configured in the Basic
 Configuration Wizard. Make sure to update this email address to a valid one that
-can be dedicated to notifications. 
+can be dedicated to notifications. You can determine whether to support HTML in
+your email messages. Lastly, you can expand the *Definition of Terms* section to
+see variables available to use in your emails. 
 
 **Message Added Email:** This tab allows you to customize the email message that
 users receive when a message is added to a topic to which they are subscribed. 
@@ -157,8 +159,17 @@ You can define custom priorities for message threads on this tab. This allows
 privileged roles to tag a thread with a certain priority in order to highlight it
 for users. By default, three priorities are defined: Urgent, Sticky, and
 Announcement. To define a thread priority, enter its name, a URL to the image
-icon that represents it, and a priority number which denotes the order in which
-that priority should appear. 
+icon that represents it, and a priority number. Threads with a higher priority
+are posted above threads with a lower priority. 
+
+**Thread Icons**
+
+  &nbsp;**Icon** | **Definition** | 
+:-------------------: | :---------------- |
+   ![Urgent](../../../images/message-boards-urgent-icon.png) |  Urgent |
+   ![Announcement](../../../images/message-boards-announcement-icon.png) |  Announcement |
+   ![Sticky](../../../images/message-boards-sticky-icon.png) |  Sticky |
+   ![Question](../../../images/message-boards-question-icon.png) |  Question |
 
 The localized language field lets you name the priorities in each locale. You
 can select the locale, update the priority names for it, and save your updates. 
@@ -171,13 +182,13 @@ going from zero messages all the way up to one thousand.
 
 In addition to ranks, you can also choose labels for certain users to have
 displayed in their profiles as shown by the Message Boards application. The
-labels correspond to memberships the users have in Liferay. Below are examples
-of using the label *Moderator*. The Moderator label in this configuration is
-applied for anyone who is a part of any of the Message Boards Administrator
-groups: the site role, the organization, the organization role, the regular
-role, or the user group. Of course, you probably wouldn't want to create a role,
-organization, organization role, site role, and user group all with the same
-name in your portal, but you get the idea. 
+labels correspond to memberships the users have in @product@. Below are
+examples of using the label *Moderator*. The Moderator label in this
+configuration is applied for anyone who is a part of any of the Message Boards
+Administrator groups: the site role, the organization, the organization role,
+the regular role, or the user group. Of course, you probably wouldn't want to
+create a role, organization, organization role, site role, and user group all
+with the same name in your Virtual Instance, but you get the idea. 
 
     Moderator=organization:Message Boards Administrator
 
@@ -218,9 +229,10 @@ board's permissions.
 
 ### Message Board Permissions [](id=permissions)
 
-To edit message board permissions, click the *Permissions* button. The
-permissions screen allows you to grant and revoke a role's ability to access
-parts of the application and perform particular actions. 
+To edit message board permissions, click on the *Options* icon (![Options](../../../images/icon-options.png))
+and select the *Home Category Permissions* option. This permissions screen
+allows you to grant and revoke a role's ability to access parts of the
+application and perform particular actions. 
 
 The permissions enable a role to perform the following actions. 
 
@@ -250,6 +262,13 @@ posts.
 
 Configure the roles with the permissions you want and *Save* your changes. 
 
+In addition to the *Home Category Permissions* option, there the *Permissions*
+option. It's for specifying the application instance's general permissions. It
+lets you control access to the application instance's options menu and to that
+menu's Configuration and Permissions options. There's also Preferences
+permission that allows you to control access to the application instance's
+preference options, if the app has any custom preferences.
+
 Now that you've configured your message board and set its permissions, you can
 focus on adding categories for message board threads. 
 
@@ -263,8 +282,8 @@ Categories can have different display styles. The available categories must be
 set in [portal property](https://docs.liferay.com/portal/7.0/propertiesdoc/portal.properties.html#Message%20Boards%20Portlet)
 `message.boards.category.display.styles` and the default category in
 `message.boards.category.display.styles.default`. When creating a new category,
-you can select the display style you like. By default, Liferay provides two
-predefined display styles, although many more can be easily added:
+you can select the display style you like. By default, Message Boards provides
+two predefined display styles, although many more can be easily added:
 
 **Default:** classic display style for general purpose and discussions. 
 
@@ -323,8 +342,8 @@ always add more categories as your message boards grow. Finally, each category
 can have any number of threads. 
 
 Also, you may move a category or merge a category's threads with a different
-Parent Category. To bring up the the Move screen, select category's *Move*
-action. You can select a different Parent Category, optionally select the *Merge
+Parent Category. To bring up the the Move screen, select the category's *Move*
+option. You can select a different Parent Category, optionally select the *Merge
 with Parent Category* check box, and click *Move*. 
 
 As you add categories to a message board, they're listed on the message board's
@@ -340,35 +359,35 @@ form and the *Add Category* form are the same.
 
 ![Figure 3: Categories help you organize threads so users can find topical threads that interest them.](../../../images/message-boards-home.png)
 
-Liferay's Message Boards supports two different mechanisms for sending email
-notifications: user subscriptions and mailing lists. Let's discuss user
+@product@'s Message Boards supports two different mechanisms for sending
+email notifications: user subscriptions and mailing lists. Let's discuss user
 subscriptions first and then mailing lists. 
 
 ## User Subscriptions and Mailing Lists [](id=user-subscriptions-and-mailing-lists)
 
-The first mechanism Liferay uses for sending email notifications is user
+The first mechanism @product@ uses for sending email notifications is user
 subscriptions. Users can subscribe to particular categories and threads. Liferay
 uses the message board's configured *Email From* address to send email
 notifications to subscribed users, whenever a new post is created or an existing
 post is updated. Liferay can import email replies to message board notifications
 directly into the message board. This is a very useful feature since it allows
 users to interact on the message board via email, without needing to log in to
-Liferay and view the message board page directly. This feature is, however,
+@product@ and view the message board page directly. This feature is, however,
 disabled by default. To enable it, add the following line to your
 `portal-ext.properties` file: 
 
     pop.server.notifications.enabled=true
 
-As this property suggests, Liferay's message boards user subscription mechanism
-uses the POP mail protocol. When an email reply to a message board notification
-is read by Liferay, the reply is posted to the message board and then deleted
+As this property suggests, Message Board's user subscription mechanism uses the
+POP mail protocol. When an email reply to a message board notification is read
+by @product@, the reply is posted to the message board and then deleted
 from the mail server. Deleting the message from the mail server is the POP
-protocol's default behavior and Liferay assumes that your POP mail server
+protocol's default behavior and @product@ assumes that your POP mail server
 behaves this way. Most POP clients offer an option to leave mail on the mail
 server after it's been downloaded, but you shouldn't exercise this option. If
-you configure mail to be left on the mail server, Liferay will repeatedly send
-copies of each retained message along with each new email notification that's
-sent to subscribed users. 
+you configure mail to be left on the mail server, @product@ will repeatedly
+send copies of each retained message along with each new email notification
+that's sent to subscribed users. 
 
 When enabling message boards to import replies to email notifications, you
 should decide whether or not you want to use a mail server subdomain to handle
@@ -378,9 +397,9 @@ portal properties:
     pop.server.subdomain=events
 
 This property creates a special MX (mail exchange) subdomain to receive all
-portal-related email (e.g., events.liferay.com). If you don't want to use the
-subdomain approach, you can unset this value to tell Liferay to use the *Email
-From* address, specified in the Message Board's configuration, to receive
+virtual instance related email (e.g., events.liferay.com). If you don't want to
+use the subdomain approach, you can unset this value to tell Liferay to use the
+*Email From* address, specified in the Message Board's configuration, to receive
 message board notification email replies. For example, the *Email From* address
 could be set to *replies\@liferay.com*. 
 
@@ -389,15 +408,15 @@ If you don't want to use a mail server subdomain, add the following line to your
 
     pop.server.subdomain=
 
-If you're not using a mail subdomain, Liferay parses the message headers of
-emails from the *Email From* address to determine the message board category and
-message ID. If you keep the `pop.server.subdomain=events` default, the email
+If you're not using a mail subdomain, @product@ parses the message headers
+of emails from the *Email From* address to determine the message board category
+and message ID. If you keep the `pop.server.subdomain=events` default, the email
 notification address takes the following form:
-*mb.[category_id][message_id]@events.liferay.com*. In this case, Liferay parses
-the email address to find the category and message ID. Parsing the email address
-is safer than parsing message headers, since different email clients treat
-message headers differently. This is why the `events` subdomain is enabled by
-default. 
+*mb.[category_id][message_id]@events.liferay.com*. In this case, @product@
+parses the email address to find the category and message ID. Parsing the email
+address is safer than parsing message headers, since different email clients
+treat message headers differently. This is why the `events` subdomain is enabled
+by default. 
 
 Additionally, you can configure the interval on which the
 `POPNotificationListener` runs. The value is set in one minute increments. The
@@ -406,33 +425,44 @@ whatever you like:
 
     pop.server.notifications.interval=1
 
-The second mechanism Liferay uses for sending email notifications is mailing
-lists. Any category in a Liferay message board can have its own mailing list.
-Liferay's mailing list mechanism, unlike its user subscription mechanism,
-supports both the POP and the IMAP protocols. POP is the default protocol, but
-each message board's mailing list is configured independently. If you choose the
-IMAP protocol for a category's mailing list, make sure to configure the IMAP
-inbox to delete messages as they are pulled by the email client that sends
-messages to the users on the mailing list. Otherwise, each email message that's
-retained on the server will be sent to the mailing list each time there's a new
-post or an update in the category. 
++$$$
 
-When a mailing list is enabled for a message board category, Liferay listens to
-the specific email inbox that's configured for the mailing list. Enabling the
-mailing list function allows users on the mailing list to simply reply to the
-notification messages in their email clients. Liferay pulls the messages from
-the email inbox it's configured to listen to and automatically copies those
-replies to the appropriate message board thread. 
+**Note**: Depending on your mail provider, if you're using multiple devices to
+access email through POP, you might need to configure in your POP settings
+something like Gmail's *recent mode*. In Gmail, recent mode assures that emails
+go to all your devices instead of only the the first client that receives the
+email. To enable recent mode in Gmail, for example, prefix the value of your POP
+client's Username or Email field with `recent:`.
+
+$$$
+
+The second mechanism @product@ uses for sending email notifications is
+mailing lists. Any category in a @product@ message board can have its own
+mailing list. @product@'s mailing list mechanism, unlike its user
+subscription mechanism, supports both the POP and the IMAP protocols. POP is the
+default protocol, but each message board's mailing list is configured
+independently. If you choose the IMAP protocol for a category's mailing list,
+make sure to configure the IMAP inbox to delete messages as they are pulled by
+the email client that sends messages to the users on the mailing list.
+Otherwise, each email message that's retained on the server will be sent to the
+mailing list each time there's a new post or an update in the category. 
+
+When a mailing list is enabled for a message board category, @product@
+listens to the specific email inbox that's configured for the mailing list.
+Enabling the mailing list function allows users on the mailing list to simply
+reply to the notification messages in their email clients. @product@ pulls
+the messages from the email inbox it's configured to listen to and automatically
+copies those replies to the appropriate message board thread. 
 
 With both user subscriptions and mailing lists, users can reply to message board
-notification emails and Liferay imports their replies to the message board.
-However, with mailing lists, users reply to the mailing list and Liferay listens
-to the specific inbox configured for the mailing list and copies messages to the
-appropriate message board category. With user subscriptions, by default, email
-replies to message board notifications are not imported to the message boards.
-This feature has to be enabled in your `portal-ext.properties` file. Once this
-feature has been enabled, users can reply to a specific address and have their
-replies copied to the message board. 
+notification emails and @product@ imports their replies to the message
+board. However, with mailing lists, users reply to the mailing list and
+@product@ listens to the specific inbox configured for the mailing list and
+copies messages to the appropriate message board category. With user
+subscriptions, by default, email replies to message board notifications are not
+imported to the message boards. This feature has to be enabled in your
+`portal-ext.properties` file. Once this feature has been enabled, users can
+reply to a specific address and have their replies copied to the message board. 
 
 Note: Since any number of sites can use a globally scoped message board,
 globally scoped message boards do not support user subscriptions or mailing
@@ -440,14 +470,15 @@ lists. Make sure to use a site-scoped or page-scoped message board if you need
 user subscriptions or a mailing list with your message board. 
 
 To enable the mailing list functionality for a category, you need a dedicated
-email address for the category. Once you select the *Active* check box, a number
-of other options appear. When a mailing list is activated, Liferay imports
-messages it receives from the mailing list to the message board. Liferay looks
-for a Liferay user with the sender's email address. If the sender isn't a
-Liferay user and the *Allow Anonymous Emails* box is unchecked, the message is
-thrown away and not posted to the message board. If the *Allow Anonymous Emails*
-box is checked, anyone can send email to the message board category's dedicated
-email account and Liferay copies the messages to the message board. 
+email address for the category. Then, click on your category's *Edit* option.
+Once you select the *Active* check box, a number of other options appear. When a
+mailing list is activated, @product@ imports messages it receives from the
+mailing list to the message board. @product@ looks for a Liferay user with
+the sender's email address. If the sender isn't a Liferay user and the *Allow
+Anonymous Emails* box is unchecked, the message is thrown away and not posted to
+the message board. If the *Allow Anonymous Emails* box is checked, anyone can
+send email to the message board category's dedicated email account and
+@product@ copies the messages to the message board. 
 
 **Email Address:** lets you enter the email address of the account that will
 receive the messages. 
@@ -470,8 +501,8 @@ your server supports it.
 
 **Password:** lets you enter the password for the account on the server. 
 
-**Read Interval (Minutes):** allows you to specify how often Liferay polls the
-server looking for new messages to post to the message board. 
+**Read Interval (Minutes):** allows you to specify how often @product@
+polls the server looking for new messages to post to the message board. 
 
 The Outgoing section has the following options: 
 
@@ -481,8 +512,8 @@ categories using email, this should be the same address configured on the
 *Incoming* section. 
 
 **Use Custom Outgoing Server:** allows you to use a different mail server than
-the one that is configured for the Liferay instance. If you check this box, more
-options appear: 
+the one that is configured for the @product@ instance. If you check this
+box, more options appear: 
 
 -   **Server Name:** lets you enter the host name of the SMTP mail server you are
     using. 
@@ -507,9 +538,9 @@ explore posting messages to them and interacting with other user's threads.
 ## Using the Message Boards [](id=using-the-message-boards)
 
 You can add the Message Boards application to a page from the *Add*
-(![Add](../../../images/icon-control-menu-add.png) menu's *Collaboration* section.
-Users will immediately recognize that the interface is similar to many other
-implementations they've seen before. Message boards are nothing new to the
+(![Add](../../../images/icon-control-menu-add.png)) menu's *Collaboration*
+section. Users will immediately recognize that the interface is similar to many
+other implementations they've seen before. Message boards are nothing new to the
 Internet, and many people have been using them for quite a long time. In any
 case, it can't hurt to explore how to use Liferay Message Boards and discover
 all of its features. 
@@ -534,33 +565,39 @@ all of the users who have been banned from posting on the message boards.
 
 ### Posting New Threads [](id=posting-new-threads)
 
-To post a new thread click the Add icon
-(![Add](../../../images/icon-portlet-add-control.png) in the app or
-![Add](../../../images/icon-add.png) in Site Administration) and select *Thread*. A
-message editing form 
-appears. The body field on this form is different from that of the other Liferay
-applications. The reason for this is to support *BBCode*, which is a standard
-form of markup used in many message board products. Before BBCode was invented,
-many message board products would allow users to enter HTML to format their
-messages. This, however, enabled attackers to insert malicious code into the
-message board. BBCode was invented to provide users a way of formatting their
-messages without allowing them to enter HTML. Similarly, Liferay supports BBCode
-in the message boards because the other editors--which are used for the Content
-Management System, Blogs, and other applications--produce HTML. This is
-appropriate for those other apps, as they are only used by privileged users, but
-it is not appropriate for the message boards. Besides this, many users of
-message boards are familiar with BBCode and are used to it, and the editor that
-is provided for Liferay's Message Boards application makes it very easy to use. 
+To post a new thread click the *Post New Thread* button in the app or
+![Add](../../../images/icon-add.png) in Message Boards in Site Administration)
+and select *Thread*. A message editing form appears. The body field on this form
+is different from that of the other @product@ applications. The reason for
+this is to support *BBCode*, which is a standard form of markup used in many
+message board products. Before BBCode was invented, many message board products
+would allow users to enter HTML to format their messages. This, however, enabled
+attackers to insert malicious code into the message board. BBCode was invented
+to provide users a way of formatting their messages without allowing them to
+enter HTML. Similarly, Liferay supports BBCode in the message boards because the
+other editors--which are used for the Content Management System, Blogs, and
+other applications--produce HTML. This is appropriate for those other apps, as
+they are only used by privileged users, but it is not appropriate for the
+message boards. Besides this, many users of message boards are familiar with
+BBCode and are used to it, and the editor that is provided for Liferay's Message
+Boards application makes it very easy to use. 
 
 Message Boards uses a rich-text editor. It supports bold, italicized,
 underlined, and crossed-out text, links, images, colors, lists, tables,
 alignments, quotation blocks, code blocks, different fonts and font sizes, and
-more. There are even a bunch of smiley faces that you can use. 
+more. The editor has keyboard shortcuts Ctrl+b for bold, Ctrl+i for italics, and
+Ctrl+u for underline. You can [mention](/discover/portal/-/knowledge_base/7-0/mentioning-users)
+another other user by entering the "@" character followed by the user's user
+name. There are even a bunch of smiley faces that you can use. 
 
-After entering the message's *Subject*, the user can specify options that
-message board permits. The options include marking the message as a question,
-posting anonymously, subscribing to the message thread, assigning the message a
-pre-defined priority, and allowing pingbacks to the message. 
+After entering the message's *Subject*, enter your message *Body*. Below the
+Body are sections that let you attach files (e.g., images) to your message,
+categorize it, tag it, and relate it to other assets. expand the *More Settings*
+section in the list of sections below the content editor. The user can specify
+thread options that the message board permits. The options include marking the
+message as a question, posting anonymously, subscribing to the message thread,
+assigning the message a pre-defined priority, and allowing pingbacks to the
+message. 
 
 The user can also specify permissions. The message can be set to be viewable by
 a particular role. And the following additional permissions can be set on the
@@ -579,12 +616,14 @@ message:
 A permissions icon appears above each posted message. You can revisit the above
 permissions by clicking the permissions icon. 
 
-You can also attach files (e.g., images) to your message, categorize it, tag it,
-and relate it to other assets. 
-
 When you're done editing and configuring your message, you can preview it, and
 save it as a draft or publish it. Once it's published, it's listed along with
 the other threads in the category. 
+
+Message Boards is also highly integrated with @product@'s user management
+features. When you click on a thread or thread reply's subject link, the
+author's profile picture, name, rank, number of posts, the date the user joined
+the site, and a link to the user's recent posts. 
 
 ### Participating in Message Board Threads [](id=participating-in-message-board-threads)
 
@@ -595,27 +634,18 @@ RSS feed and/or emails that inform you about thread activities in that category.
 Similar to a category's screen, Recent Posts lists threads too, except they're the
 latest threads across all the categories. 
 
-To view a message thread, click on it. Messages are shown by default in a
-threaded view so that replies are attached to the proper parent message. This
-makes it easy to follow along with conversations. Icons
-(![Thread Views](../../../images/message-boards-thread-view-icons.png)) at the top
-of the thread allow users to view threads in Combination View, Flat View, or
-Tree View. A Flat View shows all of the messages in the order in which they are
-posted. A Tree View indents indents reply messages with respect to the message
-they're replying to. The Combination View shows a textual tree representation of
-the thread messages using subjects only at the top, with the messages shown flat
-underneath.
+To view a message thread, click on it. Messages are shown in a threaded view so
+that replies are aligned under their proper parent thread. This makes it easy to
+follow along with conversations. Thread replies are indented under their parent
+thread. 
 
-Message Boards is also highly integrated with Liferay's user management
-features. Posts on a message board show a user's profile picture as well as the
-date the user joined the site. 
+![Figure 5: A thread's view displays author information and thread content, for the thread and all replies to the thread.](../../../images/message-boards-participate-in-threads.png)
 
-![Figure 5: Combination View shows a textual representation of the thread tree above the messages, which are displayed flat.](../../../images/message-boards-participate-in-threads.png)
-
-Subscribing to a thread causes Liferay to send the user an email whenever a new
-message is posted to the thread. If you have enabled the mailing list feature
-for the category in which the thread resides, users can simply reply to these
-messages in order to post back to the thread, without having to visit your site.
+Subscribing to a thread causes @product@ to send the user an email whenever
+a new message is posted to the thread. If you have enabled the mailing list
+feature for the category in which the thread resides, users can simply reply to
+these messages in order to post back to the thread, without having to visit your
+site.
 
 Most threads get more interesting as users reply to them. You can start creating
 a response by clicking one of the following buttons: *Reply*, *Reply with
@@ -641,9 +671,9 @@ on other areas of your site. To do this, you can, for example, create a role
 called *Message Board Administrator*. This role can be scoped to the Liferay
 instance, an organization, or a site. If you create an instance-scoped role,
 members of this role will be able to administer Message Boards throughout
-Liferay. If it is an organization or site-scoped role, members of this role will
-be able to administer a Message Boards application in only that organization or
-site. 
+@product@. If it is an organization or site-scoped role, members of this
+role will be able to administer a Message Boards application in only that
+organization or site. 
 
 You can create such a role from the Control Panel. To define the role's
 permissions, click its *Define Permissions* action and navigate to *Site
@@ -730,14 +760,11 @@ be used, for example, to allow some privileged users to post on a certain
 thread, while others are only allowed to view it. Other combinations of the
 above permissions are also possible. 
 
-That wraps up message board management basics. 
+That wraps up message board management basics.
 
 ## Summary [](id=summary)
 
 As you've discovered, Liferay's Message Boards provides full-featured forums for
 users to ask questions, discuss topics, and share small amounts of information.
-Message boards help to build strong site communities. But as your site's
-community gathers more information on topics or procedures relevant to users,
-you'll want to provide a means for them to collaborate on that information.
-Liferay's Wiki is a terrific application for users to jointly produce
-hierarchies of information. 
+Message boards help to build strong site communities. Next, let's learn how users can
+*mention* other users in their content and in comments and thread replies.

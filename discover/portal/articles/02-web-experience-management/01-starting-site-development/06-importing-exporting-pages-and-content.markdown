@@ -1,6 +1,6 @@
 # Importing/Exporting Pages and Content [](id=importing-exporting-pages-and-content)
 
-Liferay's Export/Import feature gives you the power to backup and restore your
+@product@'s Export/Import feature gives you the power to backup and restore your
 site and app data. The export feature grants users the flexibility of
 exporting site or app-specific content they've created as a LAR (Liferay
 Archive) file to other Liferay instances, or to save it for a later use. The
@@ -19,24 +19,19 @@ make some minor tweaks, and publish it with little effort.
 
 There are two primary places Export/Import is used: sites and apps. You can
 learn more about exporting/importing app data in the
-[Exporting/Importing Portlet Content](/discover/portal/-/knowledge_base/7-0/exporting-importing-portlet-content)
+[Exporting/Importing App Content](/discover/portal/-/knowledge_base/7-0/exporting-importing-app-data)
 section. In this section, you'll learn how to export and import content for
 sites.
 
-<!-- Check above link/title for exporting/importing portlet content. This
-section was sent to Jim an a PR. -Cody
-https://github.com/jhinkey/liferay-docs/pull/284
--->
-
 ## Backing Up and Restoring Pages and Their Content [](id=backing-up-and-restoring-pages-and-their-content)
 
-In the Site Administration dropdown of the Product Menu, there is an option
-called *Publishing Tools*, which is where the *Export* and *Import* features
-reside for pages. If you click on *Export*, you are presented a simple interface
-which can be used for exporting your public or private pages. The Export feature
-allows you to export your site's data as a single LAR file. Similarly, if you
-click *Import*, you're provided a similar interface which can be used for
-importing public or private pages as a LAR file.
+In the Site Administration dropdown of the Menu, there is an option called
+*Publishing Tools*, which is where the *Export* and *Import* features reside for
+pages. If you click on *Export*, you are presented a simple interface which can
+be used for exporting your public or private pages. The Export feature allows
+you to export your site's data as a single LAR file. Similarly, if you click
+*Import*, you're provided a similar interface which can be used for importing
+public or private pages as a LAR file.
 
 When importing data into a site, it's best to use a newly created site to avoid
 potential conflicts between the existing site data and the data about to be
@@ -60,7 +55,7 @@ content from a site in one environment (say, a development or QA environment)
 and move it all in one shot to a site on another server. You can use LARs to
 import data onto production servers, but you should not make this a regular
 occurrence. If you want to regularly move pages from one server to another, you
-should use Liferay's staging environment, which is discussed in the
+should use @product@'s staging environment, which is discussed in the
 [Staging Content for Publication](/discover/portal/-/knowledge_base/7-0/staging-content-for-publication)
 section.
 
@@ -74,14 +69,14 @@ to delete the site entirely, create a new site with the same name as the old
 one (i.e., re-create the site), and then import the LAR file into the new site.
 This way, there's no chance for there to be a data conflict.
 
-Liferay can handle some kinds of naming collisions when importing a LAR file
+@product@ can handle some kinds of naming collisions when importing a LAR file
 into a site. For example, suppose you're importing a LAR file into a site and
 the LAR file has a page with a certain friendly URL. If an existing page in the
-site has the same friendly URL there will be a collision. Liferay resolves the
+site has the same friendly URL there will be a collision. @product@ resolves the
 collision by adding a number to the end of the friendly URL and incrementing
 until there's no collision. This behavior takes place for friendly URL
 translations as well. Similarly, if importing a LAR into a site causes a
-category name collision, Liferay renames the imported categories.
+category name collision, @product@ renames the imported categories.
 
 +$$$
 
@@ -89,15 +84,13 @@ category name collision, Liferay renames the imported categories.
 exported from one version of Liferay into a Liferay server that's running a
 different version of Liferay. Also, note that periodically exporting LARs is
 *not* a complete backup solution; please refer to the
-[Backing up a Liferay Installation](/discover/deployment/-/knowledge_base/6-2/backing-up-a-liferay-installation)
+[Backing up a Liferay Installation](/discover/deployment/-/knowledge_base/7-0/backing-up-a-liferay-installation)
 section for information on backing up Liferay.
-
-<!-- Update above link to 7.0, when available. -Cody -->
 
 $$$
 
 Next, you'll simulate being a good administrator and exporting a LAR file for
-backup purposes. Click on the *Export* button from the *Publishing Tools* menu
+backup purposes. Click on the *Export* button from the *Publishing* menu
 and click the *Add* button (![Add Export Process](../../../images/icon-add.png)). 
 A *New Export* page loads, allowing you to configure what pages and content
 you'd like to export from your site. 
@@ -117,14 +110,15 @@ permissions for your exported pages and content are included.
 ![Figure 1: You can configure your export options manually by selecting pages, content, and permissions.](../../../images/export-page-templates.png)
 
 Once you click *Export*, the menu automatically switches to the *Processes* tab,
-where you'll see the status of your exported LAR file. You can select the link
-under *Download* to download the export to your local machine. Once you have the
-file, you can copy it to a backup location for safekeeping or import it into
-another installation of Liferay. If you must rebuild or wish to revert
-back to this version of your site, you can import this file by clicking the
-*Import* button from the Publishing Tools menu, browsing to it, and selecting
-it. You also have the option of dragging a LAR file inside the dotted area,
-which also executes the import process.
+where you'll see the status of your exported LAR file. You can select the
+*Download* icon (![Download](../../../images/icon-download.png)) to download the
+export to your local machine. Once you have the file, you can copy it to a
+backup location for safekeeping or import it into another installation of
+Liferay. If you must rebuild or wish to revert back to this version of your
+site, you can import this file by clicking the *Import* button from the
+Publishing menu, browsing to it, and selecting it. You also have the option of
+dragging a LAR file inside the dotted area, which also executes the import
+process.
 
 Another useful option to use when exporting content is the *Export Templates*
 feature. The exercise you completed previously created a custom export process.
@@ -143,7 +137,7 @@ Template](../../../images/icon-add.png)) and assign the template a name and
 description, and then fill out the configuration options as you would during a
 custom export process. Once you've saved your export template, it is available
 to use from the *Export Templates* menu. To use the template, click the
-*Actions* button (![Options](../../../images/icon-actions.png)) next to the
+*Actions* button (![Actions](../../../images/icon-actions.png)) next to the
 template and select *Export*. This automatically fills the fields and options
 for exporting pages and their content. All you have to do is give the export
 process a custom name. Once you click *Export* to confirm the configuration

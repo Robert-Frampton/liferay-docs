@@ -1,4 +1,4 @@
-# Liferay Portal Security Overview [](id=liferay-portal-security-overview)
+# @product@ Security Overview [](id=liferay-portal-security-overview)
 
 Liferay follows the OWASP Top 10 (2013) and CWE/SANS Top 25 lists to ensure
 that Liferay is as secure as possible. Following these recommendations protects
@@ -27,10 +27,16 @@ solutions:
 
 - Form authentication using the Sign In Portlet with extensible adapters for
   checking and storing credentials (portal database, LDAP)
-- SSO solutions - NTLM, CAS, SiteMinder, OpenSSO, OpenID, Facebook
+- Single-Sign-On (SSO) solutions - NTLM, CAS, SiteMinder, OpenSSO, OpenID,
+  Facebook
 - SAML plugin
   ([https://www.liferay.com/marketplace/-/mp/application/15188711](https://www.liferay.com/marketplace/-/mp/application/15188711))
 - JAAS integration with application server
+
+Note: Although Liferay's SSO solutions are incompatible with WebDAV, they can
+be used in conjunction with Liferay Sync. See the
+[Publishing Files](/discover/portal/-/knowledge_base/7-0/publishing-files) 
+article for more information on WebDAV and Liferay Sync.
 
 Remote application authentication and authorization can be done using the
 `AuthVerifier` layer:
@@ -120,13 +126,13 @@ Here's short list of Liferay security APIs:
 
 ## Secure Configuration and Run Recommendations [](id=secure-configuration-and-run-recommendations)
 
-Liferay Portal is built using the "secure by default" concept in mind. Thus,
+@product@ is built using the "secure by default" concept in mind. Thus,
 Liferay's default configuration is already very secure. It's not recommended to
 disable built-in protections or to allow all values in security white-lists.
 Such acts may lead to security misconfiguration and an insecure Liferay
 deployment.
 
-For more information about securing a Liferay Portal installation, please see
+For more information about securing a @product@ installation, please see
 [https://www.liferay.com/security](https://www.liferay.com/security) and
 [https://dev.liferay.com/web/community-security-team](https://dev.liferay.com/web/community-security-team)
 and the resources listed on those pages.

@@ -1,7 +1,7 @@
 # Organizing Content with Tags and Categories [](id=organizing-content-with-tags-and-categories)
 
 Tags and categories are two important tools you can use to help organize
-information in Liferay. These tools help users to easily find the content
+information in @product@. These tools help users to easily find the content
 they're looking for through search or navigation. Tagging and categorizing
 assets is easy. You can tag or categorize an asset at creation time or when
 editing an existing asset. If you click on the *Metadata* section of the
@@ -9,7 +9,7 @@ form when creating or editing an asset, you'll find an interface for adding tags
 and categories. If no categories are available to be added to the asset (e.g.,
 if no categories have been created), the *Select* option won't appear.
 
-![Figure 1: Here, the Web Content application's form for categorizing a new web content instance includes a Categories *Select* option since categories exist.](../../../images/web-content-categorization.png)
+![Figure 1: Here, the Web Content application's form for categorizing a new web content article includes a Categories *Select* option since categories exist.](../../../images/web-content-categorization.png)
 
 +$$$
 
@@ -22,35 +22,34 @@ section.
 
 $$$
 
-The Product Menu (![Product Menu](../../../images/icon-menu.png)) contains
-interfaces for managing tags and categories for each site in Liferay. Navigate
-to the Site Administration menu &rarr; *Content*, and you'll find the *Tags* and
+The Menu (![Menu](../../../images/icon-menu.png)) contains interfaces for
+managing tags and categories for each site in @product@. Navigate to the Site
+Administration menu &rarr; *Content*, and you'll find the *Tags* and
 *Categories* options. These options can be used to manage all your site's tags
 and categories. It is important that you both tag and categorize your content
 when you enter it. You'll take a closer look at tags and categories next.
 
 ## Tagging Content [](id=tagging-content)
 
-Tags are an important tool that can help organize information in Liferay and
+Tags are an important tool that can help organize information in @product@ and
 make it easier for users to find the content that they're interested in. Tags
 are words or phrases that you can attach to any content on the website. Tagging
 content makes your search results more accurate and enables you to use tools
 like the Asset Publisher to display content in an organized fashion on a web
 page. There are two ways to create tags: you can do it through the
-administrative console in the Site Administration section of the Product Menu or
-on the fly as content is created. By default, tags can be created by regular
-users and users can apply them to any assets which they have permission to
-create or edit.
+administrative console in the Site Administration section of the Menu or on the
+fly as content is created. By default, tags can be created by regular users and
+users can apply them to any assets which they have permission to create or edit.
 
 While regular users can, by default, create new tags by applying them to any
 assets that they have permission to create or edit, only site administrators can
 access the *Tags* application in the Content section of the Site Administration
-area of the Product Menu. Here, site administrators can create new tags and edit
-any existing site tags. To create tags in Site Administration, visit the site
-for which you want to create tags and then click *Content *&rarr; *Tags*. From
-this screen, you can view existing tags and create new ones. To create a new
-tag, click the *Add Tag* icon (![Add Tag](../../../images/icon-add.png)) and enter
-a name for the tag.
+area of the Menu. Here, site administrators can create new tags and edit any
+existing site tags. To create tags in Site Administration, visit the site for
+which you want to create tags and then click *Content *&rarr; *Tags*. From this
+screen, you can view existing tags and create new ones. To create a new tag,
+click the *Add Tag* icon (![Add Tag](../../../images/icon-add.png)) and enter a
+name for the tag.
 
 ![Figure 2: The Add Tag interface is very simple, only requiring the name of your tag.](../../../images/new-tag-interface.png)
 
@@ -59,7 +58,7 @@ example, to create tags for a new web content article, navigate to the
 *Metadata* dropdown in a New Web Content menu, and add tags *Lunar*, *Moon*, and
 *Spectacular*. Once you've created the web content with these tags, the web
 content will be associated with those tag words when they are searched or
-referenced anywhere in Liferay.
+referenced anywhere in @product@.
 
 Tags are not the only instance-wide mechanism for describing content: you can
 also use categories.
@@ -78,7 +77,7 @@ seek.
 +$$$
 
 **Note:** In previous versions of Liferay, you could specify web content types
-via `portal.properties`. In Liferay 7.0, web content types are no longer used
+via `portal.properties`. In @product@ 7.0, web content types are no longer used
 and have been replaced by vocabularies. Vocabularies allow users to filter their
 web content articles by category instead, which lets you filter your content
 using the Asset Publisher and faceted search.

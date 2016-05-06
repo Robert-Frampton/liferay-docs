@@ -1,11 +1,11 @@
 # Publishing Content Dynamically [](id=publishing-content-dynamically)
 
-Any type of content in Liferay is considered an asset. In the 
+Any type of content in @product@ is considered an asset. In the 
 [Creating Web Content](/discover/portal/-/knowledge_base/7-0/creating-web-content)
-chapter, you examined Liferay's most common type of asset: web content. Other
+chapter, you examined @product@'s most common type of asset: web content. Other
 types of assets include blog posts, wiki articles, message board posts,
 bookmarks, and documents. It's possible for developers to define custom asset
-types that utilize Liferay's asset framework. Originally, the asset framework
+types that utilize @product@'s asset framework. Originally, the asset framework
 was created to provide a mechanism for adding tags to blog entries, wiki
 articles, and web content without reimplementing the same functionality multiple
 times. The asset framework has been greatly extended since then and it now
@@ -28,9 +28,10 @@ This chapter covers the following topics:
 
 - Tagging and categorizing content
 - Using targeted, single value, and multi-value vocabularies
-- Using faceted search
-- Using the Asset Publisher
 - Adding relationships between assets
+- Using faceted search
+- Publishing assets
 - Publishing RSS feeds
+- Restoring deleted assets
 
 The first thing you'll learn about is tagging and categorizing content.

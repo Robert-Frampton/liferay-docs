@@ -1,6 +1,6 @@
 # Enabling Staging [](id=enabling-staging)
 
-Liferay provides site administrators with two different ways to set up staging:
+@product@ provides site administrators with two different ways to set up staging:
 Local Live and Remote Live. With Local Live staging, both your staging
 environment and your live environment are hosted on the same server. When Local
 Live staging is enabled for a site, a clone of the site is created containing
@@ -43,8 +43,8 @@ server.
 ## Enabling Local Live Staging [](id=enabling-local-live-staging)
 
 Site administrators can enable Staging for a site by navigating to the *Site
-Administration* &rarr; *Publishing Tools* menu and selecting *Staging*. A new
-page loads where you can select the staging type, either *Local Live* or *Remote
+Administration* &rarr; *Publishing* menu and selecting *Staging*. A new page
+loads where you can select the staging type, either *Local Live* or *Remote
 Live*, after which additional options appear. Staging allows changes to be made
 in a staging environment so that work can be reviewed, possibly using a
 workflow, before it's published to a live site. Enabling Local Live staging is
@@ -62,10 +62,10 @@ Lunar Resort home page. Before beginning, you'll want to add a new page.
 Navigate to the Pages menu in the Lunar Resort's Site Administration menu and
 add a new page named *News and Events*. Next, click *News and Events* to view
 the page. Then add the Alerts and Announcements apps to the News and Events
-page. Navigate to the Staging menu under Publishing Tools, select *Local Live*,
-and click *Save*. You've officially begun the staging process.
+page. Navigate to the Staging menu under Publishing, select *Local Live*, and
+click *Save*. You've officially begun the staging process.
 
-When you activate staging Local Live staging, Liferay creates a clone of your
+When you activate staging Local Live staging, @product@ creates a clone of your
 site. This clone became the staging environment. Because of this, it is
 recommended to only activate staging on new, clean sites. Having a few pages and
 some apps (like those of the example site you created) is no big deal. However,
@@ -77,8 +77,8 @@ site's update history won't be saved until you enable page versioning. Page
 versioning requires staging (either Local Live or Remote Live) to be enabled.
 
 If you ever need to turn off the staging environment, return back to *Staging*
-from the Publishing Tools dropdown. The processes you've created are displayed
-by default. Navigate to the *Options* icon
+from the Publishing dropdown. The processes you've created are displayed by
+default. Navigate to the *Options* icon
 (![Options](../../../images/icon-options.png)) from the upper right corner of
 the page and select *Staging Configuration*. Select the *None* radio button to
 turn Local Live staging off.
@@ -101,26 +101,28 @@ Liferay server's list of allowed servers. You also need to specify an
 authentication key to be shared by your current and your remote server and
 enable each Liferay server's tunneling servlet authentication verifier. You can
 make all of these configurations in your Liferay servers'
-`portal-ext.properties` files.  Your first step should be to add the following
+`portal-ext.properties` files. Your first step should be to add the following
 lines to your current Liferay server's `portal-ext.properties` file:
 
     tunnel.servlet.hosts.allowed=127.0.0.1,SERVER_IP,[Remote server IP address]
-    axis.servlet.hosts.allowed=127.0.0.1,SERVER_IP,192.168.0.16,[Remote server IP address]
     tunneling.servlet.shared.secret=[secret]
+    tunneling.servlet.shared.secret.hex=true
     auth.verifier.TunnelingServletAuthVerifier.hosts.allowed=
+    auth.verifier.pipeline=com.liferay.portal.security.auth.TunnelingServletAuthVerifier,com.liferay.portal.security.auth.BasicAuthHeaderAutoLogin,com.liferay.portal.security.auth.DigestAuthenticationAuthVerifier,com.liferay.portal.security.auth.ParameterAutoLogin,com.liferay.portal.security.auth.PortalSessionAuthVerifier
 
 Then add the following lines to your remote Liferay server's
 `portal-ext.properties` file:
 
     tunnel.servlet.hosts.allowed=127.0.0.1,SERVER_IP,[Local server IP address]
-    axis.servlet.hosts.allowed=127.0.0.1,SERVER_IP,192.168.0.16,[Local server IP address]
     tunneling.servlet.shared.secret=[secret]
+    tunneling.servlet.shared.secret.hex=true
     auth.verifier.TunnelingServletAuthVerifier.hosts.allowed=
+    auth.verifier.pipeline=com.liferay.portal.security.auth.TunnelingServletAuthVerifier,com.liferay.portal.security.auth.BasicAuthHeaderAutoLogin,com.liferay.portal.security.auth.DigestAuthenticationAuthVerifier,com.liferay.portal.security.auth.ParameterAutoLogin,com.liferay.portal.security.auth.PortalSessionAuthVerifier
 
-Liferay's use of a pre-shared key between your staging and production
+@product@'s use of a pre-shared key between your staging and production
 environments helps secure the remote publication process. It also removes the
 need to send the publishing user's password to the remote server for web service
-authentication. Using a pre-shared key allows Liferay to create an authorization
+authentication. Using a pre-shared key allows @product@ to create an authorization
 context (permission checker) from the provided email address, screen name, or
 user ID *without* the user's password.
 
@@ -157,9 +159,15 @@ two strategies:
 Once you've chosen a key, make sure that value of your current server matches
 the value of your remote server.
 
+One last thing you'll need to do is update the *TunnelAuthVerfierConfiguration*
+of your Liferay instance. To do this, navigate to the Control Panel &rarr;
+*Configuration* &rarr; *System Settings* &rarr; *Platform* &rarr; *Tunnel Auth
+Verifier*. Click */api/liferay/do* and insert the additional IP addresses you're
+using in the *Hosts allowed* field. Then select *Update*.
+
 Remember to restart both Liferay servers after making these portal properties
 updates. After restarting, log back in to your local Liferay instance as
-a site administrator. Then navigate to the *Publishing Tools* option in Site
+a site administrator. Then navigate to the *Publishing* option in Site
 Administration and select *Staging*. Select *Remote Live* and additional options
 appear.
 
@@ -186,7 +194,7 @@ Similar to Local Live staging, it is generally a good idea to turn remote
 staging on at the beginning of your site's development for good performance.
 When you're using Remote Live staging, there is an initial publication which
 transfers data. If you've created a large amount of content, your initial
-publication could be slow and cause a large amount of network traffic. Liferay's
+publication could be slow and cause a large amount of network traffic. @product@'s
 system is very fast for the amount of data being transferred. This is because
 the data transfer is completed piecemeal, instead of one large data dump. You
 can control the size of data transactions by setting the following portal
@@ -198,7 +206,7 @@ That's all you need to do to enable Remote Live Staging! Note that if you fail
 to set the tunneling servlet shared secret or the values of these properties on
 your current and remote servers don't match, you won't be able to enable staging
 and an error message appears. When a user attempts to publish changes from the
-local (staging) server to the remote (live) server, Liferay passes the user's
+local (staging) server to the remote (live) server, @product@ passes the user's
 email address, screen name, or user ID to the remote server to perform a
 permission check. In order for a publishing operation to succeed, the operation
 must be performed by a user that has identical credentials and permissions on
@@ -214,7 +222,7 @@ you are to make a mistake. And you not only have to create identical user
 accounts, you also have to ensure that these users have identical permissions.
 For this reason, it's recommended that you use LDAP to copy selected user
 accounts from your local (staging) Liferay server to your remote (live) Liferay
-server. Liferay's Virtual LDAP Server application (EE-only), available on
+server. Liferay's Virtual LDAP Server application, available on
 Liferay Marketplace, makes this easy.
 
 +$$$
@@ -250,9 +258,9 @@ Lunar Resort site and then click *Save*.
 ![Figure 2: You can decide to use versioning and choose what content should be staged.](../../../images/staging-page-versioning-staged-content.png)
 
 Choosing content to be staged may sound self-explanatory, but content must have
-specific attributes in Liferay to use it in a staged environment. Content or an
+specific attributes in @product@ to use it in a staged environment. Content or an
 entity should be site-scoped, so they are always part of a site; otherwise, they
-are not eligible for staging. Liferay supports the following content groups for
+are not eligible for staging. @product@ supports the following content groups for
 staging, by default:
 
 - Application Display Templates
@@ -321,7 +329,7 @@ about the other supported apps, as well. -Cody
 Before you activate staging, you can choose which of these applications' data
 you'd like to copy to staging. You'll learn about many of the collaboration
 apps listed under the Staged Portlets heading when you read the
-[Collaboration Suite](/discover/portal/-/knowledge_base/6-2/collaboration-suite)
+[Collaboration Suite](/discover/portal/-/knowledge_base/7-0/collaboration)
 chapter. For now, you just need to be aware that you can enable or disable
 staging for any of these applications. Why might you want to enable staging for
 some application types but not others? In the case of collaborative apps,
@@ -335,9 +343,6 @@ Wiki would likely benefit from *not* being staged. Notice which applications are
 marked for staging by default: if you enable staging and accept the defaults,
 staging is *not* enabled for the collaborative apps.
 
-<!-- TODO: Update Collaboration Suite chapter to 7.0 equivalent, when available.
--Cody -->
-
 The listed applications, or content groups, contain one or more specific entity.
 For example, selecting the Web Content application does not mean you're only
 selecting web content itself, but also web content folders.
@@ -348,7 +353,7 @@ maintain these references when publishing. Site administrators and content
 creators have control over the process on different levels: staging can be
 enabled for a content group and a content group can be selected for publication.
 
-Besides managing the app-specific content, Liferay also operates with several
+Besides managing the app-specific content, @product@ also operates with several
 special content types such as pages or users. For instance, pages are a part of
 the site and can reference other content types, but in a special way. The page
 references apps, which means publishing a page also implies publishing its apps.
@@ -406,7 +411,7 @@ a seamless staging experience.
 
 ### Planning Ahead for Staging [](id=planning-ahead-for-staging)
 
-Staging is a complex subsystem of Liferay that is designed to be flexible and
+Staging is a complex subsystem of @product@ that is designed to be flexible and
 scalable. Before advanced users and administators begin using it for their site,
 it's important to plan ahead and remember a few tips for a seamless process.
 There are several factors to evaluate.

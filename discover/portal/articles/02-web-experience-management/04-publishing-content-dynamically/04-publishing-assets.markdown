@@ -1,8 +1,8 @@
 # Publishing Assets [](id=publishing-assets)
 
-As you create web content, it's important to keep in mind that to Liferay, the
+As you create web content, it's important to keep in mind that to @product@, the
 pieces of content are assets, just like message board entries and blog posts.
-This allows you to publish different kinds of content using Liferay's Asset
+This allows you to publish different kinds of content using @product@'s Asset
 Publisher. You can use the Asset Publisher to publish a mixed group of various
 kinds of assets such as images, documents, blogs, and of course, web content.
 This helps in creating a more dynamic web site: you can place user-created wiki
@@ -50,7 +50,7 @@ explore the available configurations for the Asset Selection, Display Settings,
 and Subscriptions sections of the Asset Publisher's configuration window. You'll
 start by learning how select content manually. You'll see that it's very similar
 to using the Web Content Display application except that you can select assets
-of any type, not just web content instances.
+of any type, not just web content articles.
 
 ### Selecting Assets Manually [](id=selecting-assets-manually)
 
@@ -109,7 +109,7 @@ The Asset Publisher's default behavior is to select assets dynamically according
 a set of customizable rules. These rules can be stacked on top of each other so
 that they compliment each other to create a nice, refined query for your
 content. You can define complicated rules for selecting assets for display and
-Liferay automatically takes permissions into account. Liferay's Asset Publisher
+@product@ automatically takes permissions into account. Liferay's Asset Publisher
 performs well in these situations since it queries by search index instead of
 querying the database directly. You have the following options for creating
 rules for selecting content:
@@ -153,7 +153,6 @@ by the following attributes:
 - Publish Date
 - Expiration Date
 - Priority
-- Date
 
 For instance, suppose you have a series of "How To" articles that you want
 displayed in descending order based on whether the article was tagged with the
@@ -197,7 +196,7 @@ button that lets users add new assets directly from the Asset Publisher
 application. This is checked by default.
 
 **Display Template**: This selector lets you choose an application display
-template to customize how the Asset Publisher displays assets. Liferay creates
+template to customize how the Asset Publisher displays assets. @product@ creates
 the following display templates for each newly created site, including the
 default site:
 
@@ -226,19 +225,19 @@ in a Context* is selected, clicking on an asset causes that asset to be
 displayed in the application to which the asset belongs. For example, a blog
 entry would be displayed in the Blogs application where it was created.
 Likewise, a forum post would be displayed in the Message Boards application
-where it was created. Similarly, a generic web content instance would be
+where it was created. Similarly, a generic web content article would be
 displayed in the Asset Publisher of its configured display page. See the section
 below on display pages for more information.
 
 +$$$
 
-**Tip:** When the Asset Publisher displays web content instances that have an
-associated small image, the small image becomes a link to the full instance. To
-use this feature, add or edit a web content instance that the Asset Publisher
+**Tip:** When the Asset Publisher displays web content articles that have an
+associated small image, the small image becomes a link to the full article. To
+use this feature, add or edit a web content article that the Asset Publisher
 should display. Before clicking *Publish*, click on *Abstracts*, flag *Small
 Image*, and upload an image. Then click *Publish*. Once your web content
-instance appears in the Asset Publisher's list, clicking the small image takes
-you to the full instance.
+article appears in the Asset Publisher's list, clicking the small image takes
+you to the full article.
 
 $$$
 
@@ -307,9 +306,10 @@ social features to the view full of the asset in the Asset Publisher.
 
 +$$$
 
-**Tip:** An alternate way to add comments and ratings to a page is through the
-*Page Comments* and *Page Ratings* applications. Just add the applications in the
-appropriate location near the asset you'd like to have feedback for.
+**Tip:** An alternate way to add flags, comments, and ratings to a page is
+through the *Page Flags*, *Page Comments*, and *Page Ratings* applications. Just
+add the applications in the appropriate location near the asset you'd like to
+have feedback for.
      
 $$$
 
@@ -329,7 +329,7 @@ The Display Settings section of the Asset Publisher has numerous options to help
 you configure how your content selections are displayed to your users. Even
 though there are many choices, it's easy to go through the options and quickly
 adjust the ones that apply to your situation. You'll want to use the Asset
-Publisher to query for different kinds of assets in Liferay that contain
+Publisher to query for different kinds of assets in @product@ that contain
 relevant information for your users.
 
 ## Configuring Asset Publisher Subscriptions [](id=configuring-asset-publisher-subscriptions)
@@ -342,13 +342,14 @@ window, open the Subscriptions tab of the Setup tab. There are two options:
 
 Enabling RSS Subscription creates an RSS feed containing links to all of the
 assets that the Asset Publisher is configured to display. A link to this RSS
-feed appears at the bottom of the Asset Publisher application.
+feed appears at the bottom of the Asset Publisher application. This option is
+only available when the *Dynamic* Asset Selection is configured.
 
 ![Figure 4: When RSS subscriptions have been enabled for an Asset Publisher application, a link to the Asset Publisher's RSS feed appears. Users can subscribe to the Asset Publisher's RSS feed using their preferred RSS reader.](../../../images/asset-publisher-rss.png)
 
 Enabling Email Subscription adds a *Subscribe* link to the Asset Publisher.
 Users wishing to be notified of newly published assets can click on this link to
-be added to the subscription list. Liferay periodically checks for new assets
+be added to the subscription list. @product@ periodically checks for new assets
 and sends emails to subscribed users informing them about the new assets. By
 default, Liferay performs this check every twenty-four hours.
 
@@ -379,8 +380,8 @@ Next, you'll look at Display Pages.
 
 ## Content Display Pages [](id=content-display-pages)
 
-If you've been using Liferay for a while, you might have noticed something about
-how Liferay handles web content--content is never tied directly to a page. While
+If you've been using @product@ for a while, you might have noticed something about
+how @product@ handles web content--content is never tied directly to a page. While
 this can be useful (because it means that you don't have to recreate content if
 you want to display the same thing on multiple pages), it also means that you
 don't have a static URL for any web content, which is bad for search engine
@@ -396,11 +397,12 @@ a configured asset publisher are available for selection.
 
 To create a display page, you can create a page yourself, add an Asset Publisher
 app and configure it yourself. Alternatively, you can use the *Content Display
-Page* page template included with Liferay. If you're creating a Display Page
+Page* page template included with @product@. If you're creating a Display Page
 manually, once you've added an Asset Publisher application to the page, open its
-configuration window. Then check the *Set as the Default Asset Publisher for
-This Page* box. Also, for its display settings, set the Display Style to
-*Abstracts* and the Asset Link Behavior to *View in Context*.
+configuration window. Then navigate to the Display Settings tab and check the
+*Set as the Default Asset Publisher for This Page* box. Also, for its display
+settings, set the Display Style to *Abstracts* and the Asset Link Behavior to
+*View in Context*.
 
 +$$$
 
@@ -416,13 +418,12 @@ You may now be thinking, "Wait, you just told me that each web content item has
 its own URL, and that this is somehow related to pages where we display a whole
 bunch of content on the same page?" That's right. Just watch--create a display
 page called *My Web Content Display Page* somewhere in Liferay using the
-*Content Display Page* template. Make sure the *Automatically apply changes done
-to the page template...* selector is not selected. Now, on a different page, add
-a Web Content Display application. Click the *Add* button, enter a title and
-some content, click on *Display Page* at the right, and select the Display Page
-you just created. Then click *Publish*.
+*Content Display Page* template. Make sure the *Inherit Changes* selector is not
+selected. Now, on a different page, add a Web Content Display application. Click
+the *Add* button, enter a title and some content, click on *Display Page* at the
+right, and select the Display Page you just created. Then click *Publish*.
 
-![Figure 5: You can select a display page for a web content instance when creating or editing one.](../../../images/web-content-display-page.png)
+![Figure 5: You can select a display page for a web content article when creating or editing one.](../../../images/web-content-display-page.png)
 
 In the Asset Publisher of the *My Web Content Display Page*, click the *Read
 More* link to display the full content. Notice that the canonical URL for
