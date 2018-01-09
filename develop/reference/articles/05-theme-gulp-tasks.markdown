@@ -1,32 +1,39 @@
-# Theme Gulp Tasks [](id=theme-gulp-tasks)
+# Liferay Theme Generator Reference Guide
 
-Theme projects created using the [Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator)
-have a `gulpfile.js` file that provides several [gulp](https://www.npmjs.com/package/gulp)
-tasks you can execute to manage and deploy your theme.
+This reference guide provides additional configuration information for the 
+[Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator), 
+such as the available gulp tasks for generated themes, optional flags for the 
+generator, etc.
 
-Here are the gulp tasks you can execute:
+## Theme Gulp Tasks [](id=theme-gulp-tasks)
 
-*  `build`: generates the base theme files, compiles Sass into CSS, and
-    zips all theme files into a WAR file that you can deploy to a Liferay
-    server. 
+Theme projects created using the 
+[Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator)
+have a `gulpfile.js` file that provides several 
+[gulp](https://www.npmjs.com/package/gulp)
+tasks you can execute to manage and deploy your theme:
 
-*  `deploy`: runs the `build` task and deploys the WAR file to the
-    configured local app server.
+*  `build`: generates the base theme files, compiles Sass into CSS, and zips all 
+    theme files into a WAR file that you can deploy to a @product@ server. 
+
+*  `deploy`: runs the `build` task and deploys the WAR file to the configured 
+    local app server.
 
     +$$$
 
-    **Note:** If you're running the [Felix Gogo shell](/develop/reference/-/knowledge_base/7-0/using-the-felix-gogo-shell), 
+    **Note:** If you're running the 
+    [Felix Gogo shell](/develop/reference/-/knowledge_base/7-0/using-the-felix-gogo-shell), 
     you can also deploy your theme using the `gulp deploy:gogo` command. **This 
-    task will NOT work for 6.2 themes.**
+    task does NOT work for 6.2 themes.**
 
     $$$
 
-*  `extend`: allows you to specify a base theme to extend. By default, themes
-    created with the [Liferay Theme Generator](https://github.com/liferay/generator-liferay-theme)
+*  `extend`: lets you specify a base theme to extend. By default, themes created 
+    with the [Liferay Theme Generator](https://github.com/liferay/generator-liferay-theme)
     are based off of the [styled theme](https://www.npmjs.com/package/liferay-theme-styled).
 
-    You first are prompted if you want to extend a Base theme or Themelet, then
-    you're be prompted for where you would like to search for modules. Selecting
+    You first are prompted if you want to extend a Base theme or themelet, then
+    you're prompted for where you would like to search for modules. Selecting
     *Globally installed npm modules* searches globally accessible npm modules
     on your computer. Selecting *npm registry* searches for published modules
     on npm.
@@ -54,6 +61,11 @@ Here are the gulp tasks you can execute:
     Mode](/develop/tutorials/-/knowledge_base/7-0/using-developer-mode-with-themes)
     enabled.
 
-**Related Topics**
+## Liferay Theme Generator Flag options
 
-[Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator)
+The Liferay Theme Generator has optional flags that you can run for more 
+for a more customized build. The available flags are listed below:
+
+- `--deprecated`: Display deprecated options during theme creation.
+
+- 
