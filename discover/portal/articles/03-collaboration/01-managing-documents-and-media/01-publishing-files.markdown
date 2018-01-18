@@ -51,12 +51,12 @@ permissions, and folders in Documents and Media.
 
 Since the Lunar Resort's *Souvenir and Memorabilia* staff members must be able
 to upload and organize guest media, let's enable a role for these purposes. Sign
-in as the Liferay admin and open the *Menu* (![Product
-Menu](../../../images/icon-menu.png)). Then navigate to *Control Panel &rarr; Users
-&rarr; Roles*. If the staff group is a part of an Organization, and that
-organization has a site, create an Organization Role. Otherwise, create it as a
-Site Role. Name the role *Resort Guest Media Manager*. Once you've created it,
-click the role's Actions icon
+in as the Liferay admin and open the *Menu*
+(![Product Menu](../../../images/icon-menu.png)). Then navigate to
+*Control Panel &rarr; Users &rarr; Roles*. If the staff group is a part of an
+Organization, and that organization has a site, create an Organization Role.
+Otherwise, create it as a Site Role. Name the role *Resort Guest Media
+Manager*. Once you've created it, click the role's Actions icon
 (![Actions](../../../images/icon-actions.png)) and select *Define
 Permissions*. A screen appears for you to define the role's permissions.
 
@@ -72,8 +72,9 @@ Media Manager* role.
 
 +$$$
 
-To learn how to create a role and define a role's permissions, refer to [Roles
-and Permissions](/discover/portal/-/knowledge_base/7-0/roles-and-permissions).
+**Note:** To learn how to create a role and define a role's permissions, refer
+to
+[Roles and Permissions](/discover/portal/-/knowledge_base/7-0/roles-and-permissions).
 
 $$$
 
@@ -89,10 +90,10 @@ files and folders to the document library, they're listed here.
 
 ![Figure 2: The Documents and Media's *Home* folder starts empty. But the Add menu lets you upload and add all kinds of documents to the library.](../../../images/dm-admin-add-menu.png)
 
-Click the *Add* icon (![Add](../../../images/icon-add.png)) to show what you can add
-to the Document Library. You can add documents, folders, and shortcuts the same as you do
-on your local file system. You can even configure access to an entirely different
-repository. Here are the Add menu's options:
+Click the *Add* icon (![Add](../../../images/icon-add.png)) to show what you can
+add to the Document Library. You can add documents, folders, and shortcuts the
+same as you do on your local file system. You can even configure access to an
+entirely different repository. Here are the Add menu's options:
 
 **Folder**: lets you create a new location in the app's file system.
 
@@ -101,8 +102,8 @@ You can set permissions on the shortcut to specify who can access the original
 document through the shortcut.
 
 **Repository**: allows you to add access to an external repository. Refer to
-[Repostory Types](/discover/portal/-/knowledge_base/7-0/repository-types) to
-learn how to add access to them. 
+[Repostory Types](/discover/portal/-/knowledge_base/7-0/liferay-repository-types)
+to learn how to add access to them. 
 
 **Multiple Documents**: allows you to upload several documents at once.
 
@@ -110,16 +111,14 @@ learn how to add access to them.
 default document type, "Basic Document," to apply to. By default, basic
 documents are not described by any metadata sets.
 
-**Google Docs**: lets you create a file entry that links to a Google document.
-The section [Accessing Google Docs](/discover/portal/-/knowledge_base/7-0/publishing-files#accessing-google-docs)
-explains how to use this feature.
-
-The remaining items in the Add menu are default [document types](/participate/liferaypedia/-/wiki/Main/document+types)
-that are each described by a unique [metadata set](/participate/liferaypedia/-/wiki/Main/Metadata+Set).
-When you add a document belonging to a specific document type, you're presented
-with a form to not only specify the file to upload but also to fill out the
-fields defined by the document type's metadata set. We describe the "Contract"
-document type by way of example.
+The remaining items in the Add menu are default
+[document types](/participate/liferaypedia/-/wiki/Main/document+types)
+that are each described by a unique
+[metadata set](/participate/liferaypedia/-/wiki/Main/Metadata+Set). When you add
+a document belonging to a specific document type, you're presented with a form
+to not only specify the file to upload but also to fill out the fields defined
+by the document type's metadata set. We describe the "Contract" document type by
+way of example.
 
 **Contract**: lets you upload a file that you would like the "Contract" document
 type to apply to. This document type is intended to be used to describe legal
@@ -232,8 +231,8 @@ Multiple Documents screen lists them. On the side of the screen, the *All
 Selected Files* section lists several options for the files. You can fill in a
 common *Description* for the files. You can also specify a *Document Type* to
 apply. Since we're uploading image files, we'll use the *Basic Document* type,
-which is the default type. There are also options for [categorizing and
-tagging](/discover/portal/-/knowledge_base/7-0/organizing-content-with-tags-and-categories)
+which is the default type. There are also options for
+[categorizing and tagging](/discover/portal/-/knowledge_base/7-0/organizing-content-with-tags-and-categories)
 the selected files, and assigning them default permissions. We'll tighten up
 permissions by clicking the *More Options* link and deselecting all the
 permissions. When you're ready to upload the files, click *Publish*. The Add
@@ -293,11 +292,11 @@ From the list view, Documents and Media lets you act on one or more files at
 once. When you select a checkbox for one or more files, the following action
 icons appear: ![Action Icons](../../../images/dm-action-icons.png). Describing
 them from left to right, the X is for canceling file checkout, the secured lock
-is for file check-in, the unsecured lock is for file check-out, the arrows are
+is for file check-out, the unsecured lock is for file check-in, the arrows are
 for moving the files, and the trash can is for moving files to the Recycle Bin.
 You can also move selected files to a subfolder via drag and drop. File
-check-out and check-in is explained later in [Collaborating on
-Files](/discover/portal/-/knowledge_base/7-0/publishing-files#collaborating-on-files).
+check-out and check-in is explained later in
+[Collaborating on Files](/discover/portal/-/knowledge_base/7-0/publishing-files#collaborating-on-files).
 
 ![Figure 6: A file's entry view lets you act on the file, preview it, and inspect its details. If you've installed an appropriate preview plugin for a file, its preview image displays in the preview area. Liferay can, by default, preview many image types.](../../../images/dm-file-entry-details.png)
 
@@ -417,121 +416,119 @@ history actions are explained later in the section *Collaborating on Files*.
 Let's review what you've done so far. First, you created a role to manage a
 specific set of files for your site. You assigned users to the role and created
 a Documents and Media folder named *Resort Guest Media* for them to add and
-organize files. Then as a member of the role, you added a subfolder named *Spacey
-Party* and added files to it. And just now, you viewed individual file entry
-information and actions. Next, let's explore how you can access Google documents
-from your document libraries.
+organize files. Then as a member of the role, you added a subfolder named
+*Spacey Party* and added files to it. And just now, you viewed individual file
+entry information and actions. Next, let's see how you can make adjustments to
+images  in the document library.
 
-## Accessing Google Docs [](id=accessing-google-docs)
+## Editing Images [](id=editing-images)
 
-The Document Library not only lets you upload files but also allows you to
-access files stored in Google applications, such as Google Drive and Google
-Photos. This integration with Google and other external repositories enables you
-to access all of your documents from your Liferay sites. 
+You've uploaded an image to the document library. It's almost perfect, but it's 
+missing a little something. It could use a little more focus to really highlight 
+the message you're trying to communicate. Just a little editing and the image 
+would draw your readers in. You could edit the image in your favorite image 
+editing program and re-upload it, but that's a bit tedious for the minor changes 
+this image requires.
 
-As a Liferay administrator, you must configure your Liferay instance's access to
-Google's API Picker. @product@ calls on it to access files stored in
-Google's apps. Your @product@ instance must use a unique API keys and
-client ID to invoke the Google API Picker. The API key is used for accessing
-public data and the client ID is for authenticating and authorizing user access
-to non-public data. You must use a Google developer project to access the API
-picker using an API key and client ID. The three basic steps are as follows:
+What else can you do? 
 
-- **Step 1: Enable the Google API Picker**
+Lucky for you, Liferay now comes with its own built-in image editor. 
 
-- **Step 2: Create Credentials**
+A crop here and there, a little bit more contrast, and some adjustments in 
+saturation, and boom! The image is ready to go.   
 
-- **Step 3: Configure @product@'s Google Apps Settings**
+Since Liferay Portal CE 7.0 GA2 and Liferay DXP 7.0, users have been able to
+edit images within Liferay. To access the image editor, go to the Documents and
+Media repository and locate the image you want to edit. Click the Actions icon
+(![Actions](../../../images/icon-actions.png)) and select *Edit With Image
+Editor*.
 
-Let's start by enabling the Google API Picker in a Google developer project. 
+![Figure 8: You can access the image editor through the Documents and Media repository.](../../../images/image-editor-docs-and-media.png)
 
-### Step 1: Enable the Google API Picker [](id=step-1-enable-the-google-api-picker)
+The image editor can also be accessed through the item selector. Essentially, 
+anywhere you have an image, you can edit images. For example, in blog entries, 
+web content articles, and wikis, you can view a preview of the image.
 
-@product@ uses the *Google API Picker* to access files in Google. 
+Within the item selector preview window, you can access the image editor by 
+clicking the pencil icon (![Pencil](../../../images/icon-edit-pencil.png)) in 
+the bottom right corner of the preview window.
 
-1. Create a Google account (or use an existing one). 
+![Figure 9: You can access the image editor through the item selector preview window.](../../../images/image-editor-preview-window.png)
 
-2. Open the Google Developer Console at <https://console.developers.google.com>.
+The image editor was designed with quick editing in mind, and offers a minimal, 
+user-friendly UI:
 
-3. Create a new project (or use an existing one). 
+![Figure 10: The image editor's UI is clear and to the point, offering only what you need.](../../../images/image-editor-tools.png)
 
-4. In the console's product and services menu, click on the API Manager. An
-overview screen lists the Google APIs. 
+The main toolbar consists of three buttons, each of which contain a subset of
+options. The menu options are described below:
 
-5. In the list of Google APIs, find the *Google API Picker* and enable it.
-Liferay uses the API to access Google documents. 
+**Transform Tools** (![Transform](../../../images/icon-transform.png))
 
-Next we'll create credentials to use with the Google API. 
+**Crop**: Lets you reframe the image, by removing the outer portions.
 
-### Step 2: Create Credentials [](id=step-2-create-credentials)
+**Resize**: Lets you resize the image in pixels. If the lock is closed, the
+aspect ratio remains locked, and changing either width or height will
+automatically adjust the other dimension to maintain the aspect ratio. When the
+lock is opened, the width and height can be changed individually, allowing the
+aspect ratio to be altered. This is not recommended though, as the image can
+become distorted.
 
-1. In the API Manager navigation, click on *Credentials*. 
+**Rotate**: Lets you rotate the image to the left or right, in 90 degree
+increments.
 
-2. Create a new OAuth client ID for a *Web application*. Specify the following
-attributes: 
-    -   **Name**: `Google Docs Hook`
-    -   **Authorized JavaScript origins**: `[liferay-instance-URL]` (for
-        example, `http://localhost:8080` for development machines) 
-    -   **Authorized redirect URIs**: `[liferay-instance-URL]/oath2callback`
+**Adjustment Tools** (![Adjustment](../../../images/icon-adjustment.png))
 
-3. Create a new API key of type *Browser key*. Specify your @product@
-instance's URL in the field listing sites from which your Google project should
-accept requests.
+**Saturation**: Lets you adjust the amount of color saturation in the image. The
+default value of 50 is the current saturation. The slider values range
+from 0(completely desaturated) to 100(completely saturated).
 
-Your new OAuth client ID and public API access key are listed in your Google
-project's credentials. Keep the credentials screen open so you can easily
-reference these values as you specify them in @product@. All that's left is
-to enter the API key and client ID into your Liferay instance's Google Apps
-configuration. 
+**Contrast**: Lets you adjust the difference between highlights and shadows. A
+value of 50 is the current level of contrast. The slider values range from
+0(no contrast) to 100(full contrast).
 
-### Step 3: Configure @product@'s Google Apps Settings [](id=step-3-configure-liferays-google-apps-settings)
+**Brightness**: Lets you adjust the amount of light in the image. A value of
+50 is the current brightness. The slider ranges from 0(completely black) to
+100(completely white).
 
-To call Google's APIs, you must configure your @product@ instance with your
-Google project's OAuth client ID and public API access key.
+The third and final toolset is a preset of filters, which you can access by 
+clicking the wand icon (![Wand](../../../images/icon-wand.png)):
 
-1. From @product@'s *Control Panel*, navigate to *Configuration &rarr;
-Instance Settings*.
+![Figure 11: The image editor offers several filter presets for you to choose from.](../../../images/image-editor-filters.png)
 
-2. Click on the *Miscellaneous* tab and expand the *Google Apps*
-section.
+Once you have made changes to the image in the editor, you can click the 
+*Cancel* button to cancel the changes, or the *Apply* button to apply the 
+changes to the image. Once you have applied changes to your image, the history 
+bar appears:
 
-3. For *Google Apps API Key*, enter your Google project's API key.
+![Figure 12: The history bar allows you to undo, redo, and reset changes.](../../../images/image-editor-history-bar.png)
 
-4. For *Google Client ID*, enter your Google project's OAuth client ID. 
+The history bar allows you to undo, redo, and reset changes that have been made
+to the image in the editor. Note that the reset button should be used with 
+caution; once it has been pressed the image is reset to its original state, 
+causing all changes made within the editor to be lost.
 
-5. *Save* your changes. 
+As mentioned earlier, you can access the image editor in the Documents and Media
+repository, or through the item selector in blogs, web content articles, and
+wikis. When the image is edited within the Documents and Media repository, and
+saved, the version is incremented a minor version i.e. version 1.0 to version 
+1.1. You can view the previous versions of the image through the 
+*version history* table, under the information section for the image. When the 
+image is edited within the item selector, and saved, a copy is created of the 
+image and saved to the document library.
 
-Your Liferay instance is ready to access Google documents from the Document
-Library. 
+<!-- Add back in after developer tutorial has been written 
 
-### Linking to Google Docs [](id=linking-to-google-docs)
+Note that these tools are modularized, and are each their own OSGi module. This 
+modular design allows for developers to create their own custom tools and 
+filters.
 
-In your Document Library, you can create file entries that link to Google
-documents, such as files stored in Google Drive or photos saved to Google. To
-link to a Google doc in Documents and Media, click the Add icon
-(![Add](../../../images/icon-add.png)) and select *Google Docs*. The *New Google
-Docs* screen appears. 
+You can learn more about that in the [Expanding the image editor tutorial](URL)
 
-The Google docs edit screen is similar to the edit screen for basic documents,
-except for file selection. Clicking on the *Select File* button for Google
-Docs brings up Google's file picker. It lets you select files from your Google
-Drive or your photos. Select the Google file you want to link to and click
-*Publish*. 
+-->
 
-![Figure 8: You can select files from Google Drive or your photos.](../../../images/dm-google-select-a-file.png)
-
-A new file entry appears for the Google document you linked to. You can view the
-file entry as you would any file entry. Contents of the Google doc show in the
-file entry preview pane. As with any file entry, Documents and Media's *Options*
-icon (![Options](../../../images/icon-options.png)) gives you access to the
-Download, Edit, Move, Permissions, Move to Recycle Bin, and
-Checkin/Checkout/Cancel Checkout options. 
-
-![Figure 9: The Google doc file entry view displays the file's information and provides a preview of it.](../../../images/dm-google-doc-file-entry.png)
-
-You now know how to access Google docs from your document libraries. Next, let's
-pick up with our Lunar Resort guest photos example as we consider how to display
-files on site pages. 
+Next, let's pick up with our Lunar Resort guest photos example as we consider
+how to display files on site pages. 
 
 ## Displaying Files [](id=displaying-files)
 
@@ -569,17 +566,19 @@ the *Spacey Party* folder. Click the app's Options icon
 (![Options](../../../images/icon-app-options.png)) and select *Configuration*.
 The Configuration window appears and shows the *Setup* tab.
 
-The Setup tab's Display Settings section provides checkboxes to enable showing each file's
-actions, gallery navigation links (for paging through media files), and a search
-field. File search is enabled by default. The Media Type selector lets you
-filter on media file types; all supported types are filtered on by default. And
-the Media Gallery uses a [Display Template](/participate/liferaypedia/-/wiki/Main/Application+Display+Templates).
+The Setup tab's Display Settings section provides checkboxes to enable showing
+each file's actions, gallery navigation links (for paging through media files),
+and a search field. File search is enabled by default. The Media Type selector
+lets you filter on media file types; all supported types are filtered on by
+default. And the Media Gallery uses a
+[Display Template](/participate/liferaypedia/-/wiki/Main/Application+Display+Templates).
 You can create your own Display Templates for the Media Gallery or select an
-existing display template, like the *Carousel* display template. **Important**:
-To access the Carousel display template in Media Gallery, your role must have
-*View* access for that template. Since the Carousel template is in the Global
-scope, a Global scope administrator must grant the role permission to view the
-template.
+existing display template, like the *Carousel* display template.
+
+**Important**: To access the Carousel display template in Media Gallery, your
+role must have *View* access for that template. Since the Carousel template is
+in the Global scope, a Global scope administrator must grant the role permission
+to view the template.
 
 The Folders Listing section lets you select a Document Library folder to serve
 as the root folder from which to display files. The root folder is the
@@ -589,7 +588,7 @@ Media's default Home folder. If you set the My Documents folder to be your app's
 new root folder, the app accesses the My Documents folder and no longer accesses
 the Home folder.
 
-![Figure 10: The Documents and Media app can be configured to use any folder as a root folder to display.](../../../images/dm-select-root-folder.png)
+![Figure 13: The Documents and Media app can be configured to use any folder as a root folder to display.](../../../images/dm-select-root-folder.png)
 
 Lastly, the Ratings section of the Display Settings lets you enable users to
 rate files and comment on them. 
@@ -617,13 +616,12 @@ Actions* checkbox. Since we only want to show the Spacey's files, expand the
 *Folders Listing* section, then click the *Select* button to browse and select
 the *Spacey Party* folder. Then click *Save*.
 
-The Media
-Gallery now shows all of the Spacey party's files. This app enables the Lunar
-Resort media team to act on individual files. If Mrs. Spacey likes particular
-files, the staff member can download them locally and add notes in each file
-entry's comments.
+The Media Gallery now shows all of the Spacey party's files. This app enables
+the Lunar Resort media team to act on individual files. If Mrs. Spacey likes
+particular files, the staff member can download them locally and add notes in
+each file entry's comments.
 
-![Figure 11: The Media Gallery renders large thumbnail images of media files. It gives users quick access to download files that interest them.](../../../images/dm-media-gallery.png)
+![Figure 14: The Media Gallery renders large thumbnail images of media files. It gives users quick access to download files that interest them.](../../../images/dm-media-gallery.png)
 
 The Spacey Party's large image thumbnails display in the Media Gallery. When you
 click on a file's thumbnail, a slideshow appears showing the selected image. The
@@ -632,7 +630,7 @@ currently shown. And the slideshow continues until you either click pause or
 view the folder's last image. The slideshow feature provides a nice way to show
 off images. Click the X to close the slideshow window and return to the page. 
 
-![Figure 12: The Media Gallery's slideshow provides a nice way to view images.](../../../images/dm-media-gallery-slideshow.png) 
+![Figure 15: The Media Gallery's slideshow provides a nice way to view images.](../../../images/dm-media-gallery-slideshow.png) 
 
 The Media Gallery and Documents and Media apps are at your service to show
 off your Document Library files. The Lunar Resort's Souvenir and Memorabilia
@@ -660,21 +658,21 @@ site via your browser, but you can also access them from your native file
 browser and use Liferay Sync to access them from your tablet or mobile device.
 And Liferay Sync makes sure you're you can access the latest document versions. 
 
-To demonstrate using these features, we'll join the Lunar Resort
-Recreation Department members collaboration on an important document: the Lunar
-Resort's upcoming activities newsletter. Resort representatives from each activity
-group must contribute content to entice resort guests to sign up for activities.
-Staff members involved include Chip Shot (golf instructor), Wilma Carwin (lunar
-rover race instructor), and Tenzing Nepal (lunar sherpa). Each of them use
-different devices and bring their own style and attitude to the collaboration.
-So perhaps you'll be able to relate to their effort.
+To demonstrate using these features, we'll join the Lunar Resort Recreation
+Department members collaboration on an important document: the Lunar Resort's
+upcoming activities newsletter. Resort representatives from each activity group
+must contribute content to entice resort guests to sign up for activities. Staff
+members involved include Chip Shot (golf instructor), Wilma Carwin (lunar rover
+race instructor), and Tenzing Nepal (lunar sherpa). Each of them use different
+devices and bring their own style and attitude to the collaboration. So perhaps
+you'll be able to relate to their effort.
 
 Before the group leads can start working on the newsletter, the department
 director (who's associated with the organization's content administrator Role)
 creates a folder called *Newsletters* in the organization's document library. To
 follow along with the example, create the *Newsletters* folder in an
-organization's document library on your site. This folder will hold all of the department's
-newsletters.
+organization's document library on your site. This folder will hold all of the
+department's newsletters.
 
 Next, open your favorite document editor, enter the title "Upcoming Lunar
 Activities", and save the document as `upcoming-activities.docx`. Upload the
@@ -713,7 +711,8 @@ file, move the file entry to another Document Library folder, check it in, or
 cancel checkout. Tenzing proceeds with the next step towards contributing to the
 file.
 
-Unless you're using [Liferay Sync](/discover/portal/-/knowledge_base/7-0/using-liferay-sync-on-your-desktop)
+Unless you're using
+[Liferay Sync](/discover/portal/-/knowledge_base/7-0/using-liferay-sync-on-your-desktop)
 or a local drive mapped to the file's WebDAV (explained in the next section)
 URL, you'll typically follow the basic workflow below to edit a Document Library
 file from your machine:
@@ -722,7 +721,7 @@ file from your machine:
 2. Download the file and edit it locally.
 3. Edit the file locally.
 4. From the file's Edit screen in Documents and Media, browse to and select the
-local file. Save and Checkin
+   local file. Save and Checkin
 5. Check in the file.
 
 Let's continue as Tenzing, following the above worklow. (1) You've already
@@ -764,7 +763,7 @@ and select your local file, and click *Save and Check In*. This time, leave the
 major version selection unchecked and click *Save*. The file is checked in and
 it's minor version number is incremented. 
 
-![Figure 13: No file is "written in stone". Version history actions let you inspect, delete, and reinstate file versions.](../../../images/dm-file-version-actions.png)
+![Figure 16: No file is "written in stone". Version history actions let you inspect, delete, and reinstate file versions.](../../../images/dm-file-version-actions.png)
 
 In the file entry's screen, the *Version History* table lists the versions of
 the file. The department director created version 1.0, Tenzing created major
@@ -813,10 +812,10 @@ your file browser, you need to use log in credentials for the @product@
 instance and the WebDAV URL of the folder you'd like to access.
 
 Navigate to the Documents and Media app hosting the folder you'd like to access.
-Click on the folder's Actions icon ![Actions](../../../images/icon-actions.png) and
-select *Access from Desktop*.
+Click on the folder's Actions icon ![Actions](../../../images/icon-actions.png)
+and select *Access from Desktop*.
 
-![Figure 14: Select *Access from Desktop* to get the folder's WebDAV URL.](../../../images/dm-access-from-desktop-action.png)
+![Figure 17: Select *Access from Desktop* to get the folder's WebDAV URL.](../../../images/dm-access-from-desktop-action.png)
 
 Copy the WebDAV URL. On Windows, map a network drive drive to the WebDAV URL.
 Enter your @product@ credentials when you're prompted for them. The document
@@ -845,9 +844,9 @@ Prix. She saves the file and closes it. The file in Documents and Media is now
 "Approved" and its minor version is incremented. Voila! She's done her part
 collaborating on the newsletter.
 
-Following Wilma Carwin's demonstration, you've learned how to map your local file
-manager to a Document Library folder and collaborate on files from your desktop
-environment. 
+Following Wilma Carwin's demonstration, you've learned how to map your local
+file manager to a Document Library folder and collaborate on files from your
+desktop environment. 
 
 ## Summary [](id=summary)
 
